@@ -1,0 +1,40 @@
+<html>
+    <head>
+        <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+        
+        <style>
+            table {
+                font-family: arial, sans-serif;
+                border-collapse: collapse;
+                width: 100%;
+            }
+            td, th {
+                border: 1px solid #dddddd;
+                text-align: left;
+                padding: 8px;
+            }
+
+            tr:nth-child(even) {
+                background-color: #dddddd;
+            }
+            
+        </style>
+    </head>
+    <body>
+        <div x-data="{transactions: [{name: 'coffee', cost:'2.00'}, {name: 'bagel', cost:'4.00'}]}"></div>
+        <table>
+            <tr>
+                <th>Transaction Name</th>
+                <th>Charge Amount</th>
+            </tr>
+            <tr>
+                <td>Coffee</td>
+                <td>2.00</td>
+            </tr>
+            <tr>
+                <td>Bagel</td>
+                <td>4.00</td>
+            </tr>
+        </table>
+    </body>
+</html>
