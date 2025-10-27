@@ -1,5 +1,3 @@
-
-            
 import Alpine from 'https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/module.esm.js'
 import Papa from 'https://cdn.jsdelivr.net/npm/papaparse@5.4.1/+esm'
 
@@ -18,6 +16,23 @@ Alpine.store('transactions',  {
 
 // Start Alpine ui interpreter
 Alpine.start()
+
+
+function parseCSV(){
+const csv = `name,age
+Alice,30
+Bob,25`;
+
+    // Parse CSV string
+    const results = Papa.parse(csv, {
+      header: true,       // Treat first row as headers
+      skipEmptyLines: true
+    });
+
+    console.log(results.data);
+}
+
+parseCSV()
 
 // Inject the HTML after Alpine is ready
 const transactionsView = `
